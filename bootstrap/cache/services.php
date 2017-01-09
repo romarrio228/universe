@@ -23,10 +23,12 @@
     19 => 'Illuminate\\Translation\\TranslationServiceProvider',
     20 => 'Illuminate\\Validation\\ValidationServiceProvider',
     21 => 'Illuminate\\View\\ViewServiceProvider',
-    22 => 'App\\Providers\\AppServiceProvider',
-    23 => 'App\\Providers\\AuthServiceProvider',
-    24 => 'App\\Providers\\EventServiceProvider',
-    25 => 'App\\Providers\\RouteServiceProvider',
+    22 => 'universe\\Providers\\AppServiceProvider',
+    23 => 'universe\\Providers\\AuthServiceProvider',
+    24 => 'universe\\Providers\\EventServiceProvider',
+    25 => 'universe\\Providers\\RouteServiceProvider',
+    26 => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
+    27 => 'Collective\\Html\\HtmlServiceProvider',
   ),
   'eager' => 
   array (
@@ -40,10 +42,10 @@
     7 => 'Illuminate\\Pagination\\PaginationServiceProvider',
     8 => 'Illuminate\\Session\\SessionServiceProvider',
     9 => 'Illuminate\\View\\ViewServiceProvider',
-    10 => 'App\\Providers\\AppServiceProvider',
-    11 => 'App\\Providers\\AuthServiceProvider',
-    12 => 'App\\Providers\\EventServiceProvider',
-    13 => 'App\\Providers\\RouteServiceProvider',
+    10 => 'universe\\Providers\\AppServiceProvider',
+    11 => 'universe\\Providers\\AuthServiceProvider',
+    12 => 'universe\\Providers\\EventServiceProvider',
+    13 => 'universe\\Providers\\RouteServiceProvider',
   ),
   'deferred' => 
   array (
@@ -134,6 +136,12 @@
     'translation.loader' => 'Illuminate\\Translation\\TranslationServiceProvider',
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
+    'command.ide-helper.generate' => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
+    'command.ide-helper.models' => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
+    'html' => 'Collective\\Html\\HtmlServiceProvider',
+    'form' => 'Collective\\Html\\HtmlServiceProvider',
+    'Collective\\Html\\HtmlBuilder' => 'Collective\\Html\\HtmlServiceProvider',
+    'Collective\\Html\\FormBuilder' => 'Collective\\Html\\HtmlServiceProvider',
   ),
   'when' => 
   array (
@@ -171,6 +179,12 @@
     array (
     ),
     'Illuminate\\Validation\\ValidationServiceProvider' => 
+    array (
+    ),
+    'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider' => 
+    array (
+    ),
+    'Collective\\Html\\HtmlServiceProvider' => 
     array (
     ),
   ),
