@@ -29,6 +29,7 @@
     25 => 'universe\\Providers\\RouteServiceProvider',
     26 => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
     27 => 'Collective\\Html\\HtmlServiceProvider',
+    28 => 'Laratrust\\LaratrustServiceProvider',
   ),
   'eager' => 
   array (
@@ -46,6 +47,7 @@
     11 => 'universe\\Providers\\AuthServiceProvider',
     12 => 'universe\\Providers\\EventServiceProvider',
     13 => 'universe\\Providers\\RouteServiceProvider',
+    14 => 'Laratrust\\LaratrustServiceProvider',
   ),
   'deferred' => 
   array (
