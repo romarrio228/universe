@@ -51,7 +51,17 @@ class AddressController extends Controller
 
     public function show($id)
     {
-        //
+        $address = Address::findOrFail( $id );
+        $country = Country::findOrFail( $address->country_id );
+        $country = $country->name;
+        $province = Province::findOrFail( $address->province_id );
+        $province = $province->name;
+        $city = City::findOrFail( $address->city_id );
+        $city = $city->name;
+        $district = District::findOrFail( $address->district_id );
+        $district = $district->name;
+
+        return view( 'address.show', compact('address', 'country', 'province', 'city', 'district') );
     }
 
     public function update(Request $request, $id)

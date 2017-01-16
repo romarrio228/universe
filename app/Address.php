@@ -18,7 +18,7 @@ class Address extends Model
 
     protected $fillable = [
         'country_id', 'province_id', 'city_id', 'district_id',
-        'address', 'english_address', 'zip', 'flag',
+        'address', 'english_address', 'zip',
     ];
 
     public function setAddressAttribute( $address )
