@@ -2,7 +2,7 @@
 
 namespace universe\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use universe\Http\Controllers\Controller;
 use universe\Country;
 use universe\Province;
@@ -12,9 +12,25 @@ use universe\Address;
 
 class AddressController extends Controller
 {
+    /* 本控制器的所有功能都要在验证后才可访问
+    参考 http://9iphp.com/web/laravel/larevel-5-middleware.html
+
+    public function __construct(){
+        $this->middleware('auth');
+    }*/
+
+    /* 本控制器的全部功能都要在登陆后才可访问，除了index，show 这两个功能
+    public function __construct(){
+        // 除了主页之外
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+        // 只有发布页
+        //$this->middleware('auth', ['only' => 'create']);
+    }
+    */
+
     public function index()
     {
-        $addresses = Address::all();
+        $addresses = Address::all();   // 此处要限制：只能查看维护自己的地址，不能查看维护别人的、别校的地址。
         return view( 'address.index', compact('addresses') );
     }
 
@@ -37,16 +53,25 @@ class AddressController extends Controller
         return redirect( 'address.index' );
     }
 */
-    public function store(Request $request)
+    public function store()
     {
-        dd($request);
-        //$input = Request::all();
+        //dd($request);
+        $input = Request::all();
         //dd($input);
         //$address = new Address();
         //$address->country_id = $request->countries
         //Address::create( $request );
+        $address = new Address;
+        $address->country_id = $input['countries'];
+        $address->province_id = $input['provinces'];
+        $address->city_id = $input['cities'];
+        $address->district_id = $input['districts'];
+        $address->address = $input['address'];
+        $address->english_address = $input['english_address'];
+        $address->zip = $input['zip'];
+        $address->save();
 
-        return redirect( 'address.index' );
+        return redirect( 'address' );
     }
 
     public function show($id)

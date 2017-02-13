@@ -15,6 +15,7 @@ class CreateAddressTable extends Migration
     {
         Schema::create('address', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('uni_id');   // 本地址所属学校ID
             $table->integer('country_id');      // 国家id
             $table->integer('province_id');     // 省份id
             $table->integer('city_id');         // 城市id

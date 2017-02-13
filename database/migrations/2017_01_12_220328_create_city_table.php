@@ -15,7 +15,7 @@ class CreateCityTable extends Migration
     {
         Schema::create('city', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('province_id');
+            $table->integer('province_id');  // 所属省份
             $table->string('name');  // 城市名
             $table->string('english_name');  // 城市英文名，或 拼音
             $table->softDeletes();    // 软删除

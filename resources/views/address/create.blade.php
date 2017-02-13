@@ -7,6 +7,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" id="vue-user">
                     <!-- <form action="" method="POST" role="form">  -->
+                        <h1>新建一个地址</h1>
+                        <hr/>
 
                             {!! Form::open(['url' => 'address']) !!}
 
@@ -70,7 +72,11 @@
                                 {!! Form::text('zip', null, ['class' => 'form-control']) !!}
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="form-group">
+                                {!! Form::submit( '确定', ['class' => 'btn btn-primary form-control']) !!}
+                            </div>
+
+
                             {!! Form::close() !!}
                     <!-- </form> -->
                     </div>

@@ -15,7 +15,7 @@ class CreateProvinceTable extends Migration
     {
         Schema::create('province', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('country_id');
+            $table->integer('country_id');  // 所属国家
             $table->string('name');  // 省份名
             $table->string('english_name');  // 省份英文名，或 拼音
             $table->softDeletes();    // 软删除

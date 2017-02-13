@@ -19,4 +19,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('address', 'AddressController');
+/* 参考 http://9iphp.com/web/laravel/larevel-5-middleware.html*/
+Route::get('address', ['middleware' => 'auth', function(){
+    Route::resource('address', 'AddressController');
+}]);
+
+/* 这是模仿的对象，但模仿失败
+Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
+    Route::get('/', 'HomeController@index');
+});
+*/
